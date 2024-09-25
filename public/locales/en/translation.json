@@ -1,0 +1,31 @@
+{
+  "navigation": {
+    "home": "Home",
+    "buy": "Buy",
+    "works": "How it works",
+    "review": "Reviews",
+    "services": "Services",
+    "electric": "Electric & Hybrid",
+    "about": "About us",
+    "audit": "CarAudit",
+    "delivery": "Delivery",
+    "financing": "Financing",
+    "warranty": "Warranty",
+    "login": "Login",
+    "searches": "Saved searches",
+    "last": "Last searches",
+    "favorite": "Favorite cars",
+    "orders": "Orders in progress",
+    "settings": "Settings"
+  },
+  "menu": "Menu",
+  "profile": "Profile",
+  "register": "Register",
+  "modal": {
+    "login": "Welcome back",
+    "registration": "Registration"
+  },
+  "notification": {
+    "login": "Don’t have an account?"
+  }
+}

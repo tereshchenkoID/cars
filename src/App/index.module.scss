@@ -1,0 +1,392 @@
+@import 'scss/config';
+
+body {
+  background-color: var(--color-background);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--typography-regular);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  min-width: var(--min-width);
+
+  @include media-breakpoint-up(lg) {
+    overflow-y: auto !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include make-spacer(m, 0);
+
+  font-weight: var(--typography-bold);
+  letter-spacing: rem(1px);
+  color: var(--color-grey-600);
+}
+
+h1 {
+  font-size: rem(36px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(42px);
+  }
+}
+
+h2 {
+  font-size: rem(30px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(36px);
+  }
+}
+
+h3 {
+  font-size: rem(26px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(32px);
+  }
+}
+
+h4 {
+  font-size: rem(24px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(30px);
+  }
+}
+
+h5 {
+  font-size: rem(20px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(24px);
+  }
+}
+
+h6 {
+  font-size: rem(16px);
+
+  @include media-breakpoint-up(lg) {
+    font-size: rem(18px);
+  }
+}
+
+a,
+button,
+input {
+  color: var(--color-text);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  font-weight: var(--typography-medium);
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    @include make-spacer(m, 0);
+
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+}
+
+button,
+a {
+  @include transition(all);
+}
+
+button {
+  @include reset-button;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  @include make-spacer(p, 0);
+  @include make-spacer(m, 0);
+}
+
+ul,
+ol {
+  @include reset-list;
+}
+
+picture,
+img {
+  @include size(100%);
+
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+hr {
+  @include make-spacer(my, 0);
+  @include size(100%, rem(1px));
+
+  display: block;
+  border: 0;
+  background-color: var(--grey-alpha-300);
+}
+
+.main {
+  @include make-spacer(mx, auto);
+  @include make-spacer(px, var(--outer-gap));
+
+  position: relative;
+  max-width: var(--max-width);
+  height: 100vh;
+}
+
+// :global {
+
+//   .swiper-button-prev,
+//   .swiper-button-next {
+//     @include transition;
+
+//     display: none;
+//     border-radius: 50%;
+//     background-color: var(--color-white);
+//     color: var(--color-black);
+//     box-shadow: 0 rem(4px) rem(16px) var(--grey-alpha-200);
+//     cursor: pointer;
+
+//     &::after {
+//       font-size: rem(18px);
+//     }
+
+//     &.swiper-button-disabled {
+//       opacity: 0.7;
+//     }
+
+//     @include media-breakpoint-up(lg) {
+//       @include flex(center, center);
+//     }
+//   }
+
+//   .swiper-wide {
+//     border-radius: rem(16px);
+//     overflow: hidden;
+//     height: 100%;
+
+//     @include media-breakpoint-up(lg) {
+//       border-radius: rem(20px);
+//     }
+
+//     .swiper-button-prev,
+//     .swiper-button-next {
+//       @include size(rem(40px));
+//     }
+//   }
+
+//   .swiper-multiply {
+//     @include make-spacer(px, rem(10px));
+//     @include make-spacer(mx, rem(-10px));
+
+//     @include media-breakpoint-up(lg) {
+//       @include make-spacer(pt, 80px);
+//       @include make-spacer(mt, rem(-70px));
+//     }
+
+//     .swiper-button-prev,
+//     .swiper-button-next {
+//       @include make-spacer(mt, 0);
+//       @include size(rem(48px));
+
+//       top: 0;
+//     }
+
+//     .swiper-button-prev {
+//       left: auto;
+//       right: rem(70px);
+//     }
+
+//     .swiper-slide {
+//       @include make-spacer(pb, 10px);
+//     }
+//   }
+
+//   .swiper-slide {
+//     width: fit-content;
+//     height: 100%;
+//   }
+
+//   .swiper-pagination {
+
+//     span {
+//       @include size(rem(10px));
+
+//       border: rem(1px) solid var(--color-white);
+//       background-color: transparent;
+//       opacity: 1;
+
+//       &.swiper-pagination-bullet-active {
+//         background-color: var(--color-white);
+//       }
+//     }
+//   }
+
+//   .react-tooltip {
+//     @include make-spacer(px, 16px);
+//     @include make-spacer(py, 12px);
+
+//     max-width: rem(300px);
+//     box-shadow: 0 rem(24px) rem(48px) rgba(0, 0, 0, 0.32);
+//     border-radius: rem(12px) !important;
+//     background-color: #403f5c !important;
+//     opacity: 1 !important;
+//     z-index: $z-index-9;
+//   }
+
+//   .react-tooltip-arrow {
+//     display: none;
+//   }
+
+//   .rc-slider {
+//     @include make-spacer(px, 20px);
+//     @include make-spacer(py, 0 !important);
+
+//     height: rem(40px) !important;
+//   }
+
+//   .rc-slider-track,
+//   .rc-slider-rail {
+//     height: 100% !important;
+//     border-radius: 0 !important;
+//   }
+
+//   .rc-slider-rail {
+//     background-color: var(--game_range_background_color) !important;
+//   }
+
+//   .rc-slider-track {
+
+//     &::before {
+//       position: absolute;
+//       top: 0;
+//       bottom: 0;
+//       left: rem(-20px);
+//       right: rem(-20px);
+//       width: rem(20px);
+//       background: inherit;
+//       content: '';
+//     }
+//   }
+
+//   .rc-slider-step {
+//     display: none;
+//   }
+
+//   .rc-slider-mark {
+//     top: 100%;
+//   }
+
+//   .rc-slider-handle {
+//     @include make-spacer(mt, 4px !important);
+//     @include size(rem(32px) !important);
+
+//     opacity: 1 !important;
+//     border: 0 !important;
+//     box-shadow: none !important;
+
+//     &::after {
+//       @include size(rem(30px));
+//       @include absolute-center;
+
+//       background: var(--color-white) no-repeat url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20fill%3D%22none%22%3E%3Crect%20width%3D%222%22%20height%3D%2210%22%20x%3D%224%22%20fill%3D%22%230B0A12%22%20rx%3D%221%22%2F%3E%3Crect%20width%3D%222%22%20height%3D%228%22%20y%3D%221%22%20fill%3D%22%230B0A12%22%20rx%3D%221%22%2F%3E%3Crect%20width%3D%222%22%20height%3D%228%22%20x%3D%228%22%20y%3D%221%22%20fill%3D%22%230B0A12%22%20rx%3D%221%22%2F%3E%3C%2Fsvg%3E') 50% / 10px 10px;
+//     }
+
+//     &::before {
+//       @include size(rem(40px));
+
+//       background-color: var(--game_range_background_color-active);
+//     }
+
+//     &::after,
+//     &::before {
+//       @include absolute-center;
+
+//       border-radius: 50%;
+//       content: '';
+//     }
+//   }
+
+//   .react-tel-input {
+//     @include flex($direction: row-reverse);
+
+//     .form-control {
+//       @include size(100%, rem(48px));
+//       @include make-spacer(px, 16px);
+//       @include transition(border-color);
+
+//       border: rem(1px) solid var(--grey-alpha-300);
+//       border-radius: 0 rem(12px) rem(12px) 0;
+//       overflow: hidden;
+
+//       &:focus {
+//         outline: 0;
+//         border-color: var(--color-primary);
+//       }
+//     }
+
+//     .flag-dropdown {
+//       position: static;
+//       flex-shrink: 0;
+//       border: 0;
+//       border-radius: 0;
+//       background-color: transparent;
+//       width: rem(48px);
+
+//       &.open {
+//         z-index: unset;
+//       }
+//     }
+
+//     .selected-flag {
+//       @include flex(center, center);
+//       @include make-spacer(px, 0);
+
+//       border-radius: rem(12px) 0 0 rem(12px) !important;
+//       background-color: transparent !important;
+//       border-left: rem(1px) solid var(--grey-alpha-300);
+//       border-top: rem(1px) solid var(--grey-alpha-300);
+//       border-bottom: rem(1px) solid var(--grey-alpha-300);
+//       overflow: hidden;
+//       width: 100%;
+//     }
+
+//     .arrow {
+//       display: none;
+//     }
+
+//     .country-list {
+//       border-radius: rem(16px);
+//       box-shadow: 0 rem(12px) rem(24px) var(--grey-alpha-200);
+//       width: 100%;
+
+//       .country {
+//         @include flex($align-items: center);
+
+//         height: rem(44px);
+
+//         &.highlight {
+//           background-color: var(--grey-alpha-200);
+//         }
+//       }
+//     }
+//   }
+// }

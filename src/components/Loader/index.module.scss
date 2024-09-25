@@ -1,0 +1,33 @@
+@import 'scss/config';
+
+.block {
+  @include flex(center, center);
+
+  inset: 0;
+
+  &.content {
+    position: fixed;
+    z-index: $z-index-13;
+  }
+
+  &.inline {
+    position: absolute;
+    z-index: $z-index-9;
+  }
+}
+
+.item {
+  @include size(rem(50px));
+
+  position: relative;
+  border-radius: 50%;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    border: rem(10px) solid currentColor;
+    border-radius: inherit;
+    animation: 1s infinite ease-in-out var(--animation-spin);
+    content: '';
+  }
+}

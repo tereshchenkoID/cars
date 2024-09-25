@@ -1,0 +1,49 @@
+@import 'scss/config';
+
+.block {
+  @include flex(center, flex-end);
+
+  position: fixed;
+  inset: 0;
+  z-index: $z-index-10;
+  background-color: rgba(0, 0, 0, 0.15);
+
+  @include media-breakpoint-up(lg) {
+    @include make-spacer(p, 52px);
+
+    align-items: center;
+  }
+}
+
+.content {
+  background-color: var(--color-white);
+  border-radius: rem(24px) rem(24px) 0 0;
+  overflow: hidden;
+  min-width: rem(320px);
+
+  @include media-breakpoint-up(lg) {
+    border-radius: rem(24px);
+  }
+}
+
+.header {
+  @include make-spacer(px, 16px);
+  @include make-spacer(py, 12px);
+  @include flex(space-between, center);
+
+  border-bottom-width: rem(1px);
+  border-bottom-style: solid;
+  gap: rem(16px);
+
+  @include media-breakpoint-up(lg) {
+    @include make-spacer(px, 24px);
+  }
+}
+
+.body {
+  @include make-spacer(p, 16px);
+
+  @include media-breakpoint-up(lg) {
+    @include make-spacer(p, 24px);
+  }
+}

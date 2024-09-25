@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#2B73B3" />
+    <meta name="description" content="Cars" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Cars</title>
+
+    <style>
+      :root {
+        --max-width: 1366px;
+        --min-width: 360px;
+        --header-height: 70px;
+        --outer-gap: 10px;
+
+        --box-shadow-4-16:  0 4px 16px 0 rgba(72, 88, 133, 0.12);
+        --box-shadow-16-24: 0 16px 24px -20px rgba(62, 71, 221, 1);
+        --box-shadow-16-36: 0 16px 36px -18px rgba(62, 39, 196, 1);
+        box-shadow: 0 rem(16px) rem(36px) rem(-18px) rgba(72, 88, 133, 0.4);
+
+        --border-radius-4: 4px;
+        --border-radius-8: 8px;
+
+        --gap-2: 2px;
+        --gap-4: 4px;
+        --gap-6: 6px;
+        --gap-8: 8px;
+        --gap-12: 12px;
+        --gap-16: 16px;
+        --gap-18: 18px;
+        --gap-24: 24px;
+        --gap-32: 32px;
+        --gap-40: 40px;
+        --gap-80: 80px;
+
+        --font-size: 16px;
+        --font-family: 'Poppins', sans-serif;
+        --line-height: 1.5;
+        --typography-regular: 400;
+        --typography-medium: 500;
+        --typography-bold: 700;
+
+        --color-white: #fff;
+        --color-black: #000;
+        --color-grey-50: #f5f7fb;
+        --color-grey-100: #edf1f8;
+        --color-grey-200: #d7e1ef;
+        --color-grey-300: #b3c3de;
+        --color-grey-400: #8e9fc3;
+        --color-grey-500: #63749b;
+        --color-grey-600: #485885;
+        --color-grey-700: #31406f;
+        --color-grey-800: #1f2b59;
+        --color-grey-900: #131c4a;
+
+        --color-text: var(--color-grey-800);
+        --color-primary: #3e47dd;
+        --color-primary-hover: #3e27c4;
+
+        --color-warning: #e74c3c;
+        --color-success: #07bc0c;
+        --color-info: #3498db;
+        
+        --color-background: #edf1f8;
+      }
+
+      *,
+      &::after, 
+      &::before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-color: var(--color-grey-200);
+      }
+
+      .loader {
+        position: fixed;
+        z-index: 13;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -ms-flexbox;
+        display: flex;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: var(--color-primary)
+      }
+
+      .loader__item {
+        width: 3.125rem;
+        height: 3.125rem;
+        position: relative;
+        border-radius: 50%;
+      }
+
+      .loader__item::before {
+        position: absolute;
+        inset: 0;
+        border: 0.625rem solid currentColor;
+        border-radius: inherit;
+        -webkit-animation: 1s infinite ease-in-out spin;
+        animation: 1s infinite ease-in-out spin;
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="loader">
+        <div class="loader__item"></div>
+      </div> 
+    </div>
+  </body>
+</html>

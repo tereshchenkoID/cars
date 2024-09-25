@@ -1,0 +1,35 @@
+import { useRequest } from 'hooks/useRequest'
+
+import { types } from 'store/actionTypes'
+
+export const setAuth = value => async dispatch => {
+  if (value) {
+    dispatch({
+      type: types.SET_AUTH,
+      payload: value,
+    })
+
+    return value
+  } else {
+    const { get } = useRequest('authSession/')
+
+    try {
+      const data = await get()
+      const language = JSON.parse(localStorage.getItem('language'))
+
+      if(language) {
+        data.account.language = language
+      }
+
+      dispatch({
+        type: types.SET_AUTH,
+        // payload: data,
+        payload: true,
+      })
+
+      return data
+    } catch (e) {
+      console.log(e)
+    }
+  }
+}
