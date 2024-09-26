@@ -47,12 +47,8 @@ const Menu = ({ setShow, show }) => {
 
   useOutsideClick(
     blockRef,
-    () => {
-      setActive(null)
-    },
-    {
-      buttonRef: buttonRef,
-    },
+    () => setActive(null),
+    { buttonRef }
   )
 
   useEffect(() => {

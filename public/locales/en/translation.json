@@ -16,16 +16,36 @@
     "last": "Last searches",
     "favorite": "Favorite cars",
     "orders": "Orders in progress",
-    "settings": "Settings"
+    "settings": "Settings",
+    "sitemap": "Sitemap",
+    "contact": "Contact"
+  },
+  "modal": {
+    "login": "Welcome back",
+    "registration": "Registration",
+    "language": "Language",
+    "restore": "Forgot your password?"
+  },
+  "notification": {
+    "login": "Don’t have an account?",
+    "registration": "Have an account?",
+    "restore": "No worries. We'll send you a link to reset your password.",
+    "via_email": "Or via e-mail",
+    "forgot_password": "Forgot your password?",
+    "terms": "I agree to the processing of personal data"
   },
   "menu": "Menu",
   "profile": "Profile",
   "register": "Register",
-  "modal": {
-    "login": "Welcome back",
-    "registration": "Registration"
-  },
-  "notification": {
-    "login": "Don’t have an account?"
-  }
+  "services": "Services",
+  "company": "Company",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "restore": "Restore",
+  "personal_data": "Personal data",
+  "name": "Name",
+  "surname": "Surname",
+  "postal_code": "Postal code",
+  "phone_number": "Phone number"
 }

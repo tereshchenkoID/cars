@@ -1,4 +1,7 @@
-// import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+
+import { NAVIGATION } from 'constant/config'
 
 import Container from 'components/Container'
 import Logo from 'components/Logo'
@@ -16,7 +19,36 @@ const PAYMENTS = [
 ]
 
 const Footer = () => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
+
+  const MENU = [
+    {
+      title: 'Carvago',
+      submenu: [
+        NAVIGATION.buy,
+        NAVIGATION.works,
+        NAVIGATION.review,
+        NAVIGATION.electric,
+        NAVIGATION.sitemap
+      ]
+    },
+    {
+      title: t('services'),
+      submenu: [
+        NAVIGATION.audit,
+        NAVIGATION.delivery,
+        NAVIGATION.financing,
+        NAVIGATION.warranty
+      ]
+    },
+    {
+      title: t('company'),
+      submenu: [
+        NAVIGATION.about,
+        NAVIGATION.contact
+      ]
+    }
+  ]
 
   return (
     <footer className={style.block}>
@@ -28,13 +60,34 @@ const Footer = () => {
             <Social />
           </div>
           <div className={style.column}>
-            <h6>Carvago</h6>
-          </div>
-          <div className={style.column}>
-            <h6>Services</h6>
-          </div>
-          <div className={style.column}>
-            <h6>Company</h6>
+            {
+              MENU.map((el, idx) =>
+                <ul
+                  key={idx}
+                  className={style.submenu}
+                >
+                  <li className={style.item}>
+                    <h6>{el.title}</h6>
+                  </li>
+                  {
+                    el.submenu.map((sublink, index) =>
+                      <li
+                        className={style.item}
+                        key={index}
+                      >
+                        <Link
+                          to={sublink.link}
+                          rel="noreferrer"
+                          className={style.link}
+                        >
+                          {t(sublink.text)}
+                        </Link>
+                      </li>
+                    )
+                  }
+                </ul>
+              )
+            }
           </div>
         </div>
         <div className={style.bottom}>
@@ -42,7 +95,7 @@ const Footer = () => {
           <div className={style.payments}>
             {
               PAYMENTS.map((el, idx) =>
-                <img 
+                <img
                   key={idx}
                   className={style.payment}
                   src={`./image/${el}.svg`}

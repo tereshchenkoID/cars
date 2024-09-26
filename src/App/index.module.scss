@@ -33,7 +33,7 @@ h6 {
 h1 {
   font-size: rem(36px);
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: rem(42px);
   }
 }
@@ -41,7 +41,7 @@ h1 {
 h2 {
   font-size: rem(30px);
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: rem(36px);
   }
 }
@@ -49,7 +49,7 @@ h2 {
 h3 {
   font-size: rem(26px);
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: rem(32px);
   }
 }
@@ -57,7 +57,7 @@ h3 {
 h4 {
   font-size: rem(24px);
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: rem(30px);
   }
 }
@@ -65,7 +65,7 @@ h4 {
 h5 {
   font-size: rem(20px);
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: rem(24px);
   }
 }
@@ -73,7 +73,7 @@ h5 {
 h6 {
   font-size: rem(16px);
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     font-size: rem(18px);
   }
 }

@@ -4,7 +4,7 @@ import Modal from 'components/Modal'
 
 const ModalContext = createContext()
 
-export const ModalProvider = ({ title, children }) => {
+export const ModalProvider = ({ children }) => {
   const [modalContent, setModalContent] = useState(null)
   const [modalTitle, setModalTitle] = useState('');
   const [isOpen, setIsOpen] = useState(false)

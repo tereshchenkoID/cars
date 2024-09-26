@@ -1,14 +1,16 @@
 @import 'scss/config';
 
 .block {
-  @include make-spacer(pt, var(--gap-80));
-  @include make-spacer(pb, var(--gap-32));
+  @include make-spacer(pt, var(--gap-32));
 
   position: relative;
   border-top-width: rem(1px);
   border-top-style: solid;
   background-color: var(--color-grey-50);
-  font-size: rem(14px);
+
+  @include media-breakpoint-up(lg) {
+    @include make-spacer(pt, var(--gap-80));
+  }
 }
 
 .top,
@@ -23,11 +25,16 @@
 }
 
 .top {
-  grid-template-columns: 2fr repeat(3, 1fr);
+  align-items: flex-start;
+  gap: var(--gap-32);
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1.5fr 3fr;
+  }
 }
 
 .bottom {
-  @include make-spacer(mt, 80px);
+  @include make-spacer(mt, var(--gap-32));
   @include make-spacer(py, var(--gap-32));
 
   border-top-width: rem(1px);
@@ -36,12 +43,34 @@
   gap: var(--gap-32);
 
   @include media-breakpoint-up(lg) {
+    @include make-spacer(mt, var(--gap-80));
+
     grid-template-columns: 1fr auto;
   }
 }
 
 .column {
-  row-gap: var(--gap-40);
+
+  &:first-child {
+    grid-row-gap: var(--gap-32);
+    font-size: rem(14px);
+  }
+
+  &:last-child {
+    --grid-count: 1;
+
+    grid-template-columns: repeat(var(--grid-count), 1fr);
+    align-items: flex-start;
+    gap: var(--gap-32);
+
+    @include media-breakpoint-up(md) {
+      --grid-count: 2;
+    }
+
+    @include media-breakpoint-up(lg) {
+      --grid-count: 3;
+    }
+  }
 }
 
 .transfer {
@@ -56,4 +85,18 @@
 
 .payment {
   @include size(rem(45px), rem(28px));
+}
+
+.submenu {
+  display: grid;
+  gap: var(--gap-12);
+}
+
+.link {
+  @include hover {
+
+    &:hover {
+      font-weight: var(--typography-bold);
+    }
+  }
 }

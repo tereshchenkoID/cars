@@ -14,12 +14,8 @@ const Language = () => {
 
   useOutsideClick(
     blockRef,
-    () => {
-      setShow(false)
-    },
-    {
-      buttonRef: buttonRef,
-    },
+    () => setShow(false),
+    { buttonRef }
   )
 
   return (

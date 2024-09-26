@@ -78,9 +78,17 @@ export const NAVIGATION = {
     icon: 'fa-regular fa-credit-card'
   },
   settings: {
-    link: '/',
+    link: '/settings',
     text: 'navigation.settings',
     icon: 'fa-regular fa-sun'
+  },
+  sitemap: {
+    link: '/sitemap',
+    text: 'navigation.sitemap'
+  },
+  contact: {
+    link: '/contact',
+    text: 'navigation.contact'
   },
 }
 
