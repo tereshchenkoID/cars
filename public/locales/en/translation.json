@@ -47,5 +47,7 @@
   "name": "Name",
   "surname": "Surname",
   "postal_code": "Postal code",
-  "phone_number": "Phone number"
+  "phone_number": "Phone number",
+  "select_countries": "Select countries",
+  "select_values": "Select values"
 }

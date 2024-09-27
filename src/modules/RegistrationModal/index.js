@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useModal } from 'context/ModalContext'
 
+import { getData } from 'helpers/api'
+
+import Phone from 'components/Phone'
 import Field from 'components/Field'
 import Button from 'components/Button'
+import Select from 'components/Select'
 import Password from 'components/Password'
 import LoginModal from 'modules/LoginModal'
 import Checkbox from 'components/Checkbox'
@@ -13,6 +17,23 @@ import style from './index.module.scss'
 const RegistrationModal = () => {
   const { t } = useTranslation()
   const { showModal } = useModal()
+  const [countries, setCountries] = useState([
+    {
+      "alpha_2": "GR",
+      "alpha_3": "GER",
+      "name": "Germany"
+    },
+    {
+      "alpha_2": "MZ",
+      "alpha_3": "MOZ",
+      "name": "Mozambique"
+    },
+    {
+      "alpha_2": "UA",
+      "alpha_3": "UKR",
+      "name": "Ukraine"
+    }
+  ])
 
   const [formData, setFormData] = useState({
     login: '',
@@ -20,6 +41,8 @@ const RegistrationModal = () => {
     name: '',
     surname: '',
     postal: '',
+    country: '',
+    phone: '',
     terms: false,
   })
 
@@ -29,6 +52,12 @@ const RegistrationModal = () => {
       [field]: value,
     }))
   }
+
+  // useEffect(() => {
+  //   getData('countries/').then(json => {
+  //     setCountries(json)
+  //   })
+  // }, [])
 
   const openModal = () => {
     showModal(<LoginModal />)
@@ -87,11 +116,28 @@ const RegistrationModal = () => {
             onChange={(value) => handleChange('surname', value)}
           />
         </div>
-        <Field
-          placeholder={t('postal_code')}
-          data={formData.postal}
-          onChange={(value) => handleChange('postal', value)}
+        <Phone
+          data={formData.phone}
+          onChange={value => handleChange('phone', value)}
+          isRequired={true}
         />
+        <div className={style.grid}>
+          <Select
+            placeholder={t('select_countries')}
+            options={countries.map(item => ({
+              value: item.alpha_2,
+              label: item.name,
+            }))}
+            data={formData.country}
+            isRequired={true}
+            onChange={(value) => handleChange('country', value)}
+          />
+          <Field
+            placeholder={t('postal_code')}
+            data={formData.postal}
+            onChange={(value) => handleChange('postal', value)}
+          />
+        </div>
         <Checkbox
           placeholder={t('notification.terms')}
           data={formData.terms}

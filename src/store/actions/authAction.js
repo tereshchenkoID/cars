@@ -24,7 +24,7 @@ export const setAuth = value => async dispatch => {
       dispatch({
         type: types.SET_AUTH,
         // payload: data,
-        payload: true,
+        payload: false,
       })
 
       return data
